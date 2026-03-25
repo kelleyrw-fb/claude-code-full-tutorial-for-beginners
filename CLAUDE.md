@@ -42,12 +42,14 @@ Simple 2-player game. 3×3 grid of `.cell` divs. Win state checked against all 8
 
 ## Git / GitHub Workflow
 
-Always commit after meaningful changes and push to `origin/main`:
+**Commit and push frequently** — after every meaningful unit of work (feature added, bug fixed, file created). Never batch multiple unrelated changes into one commit. This ensures work is never lost and the history is easy to revert.
 
 ```bash
 git add <specific files>
 git commit -m "concise description of what and why"
 git push
 ```
+
+Commit message format: short imperative summary (e.g. `Add enemy health bars`, `Fix bullet collision with tank`). No need for a body unless the change is complex.
 
 Remote: `https://github.com/kelleyrw-fb/claude-code-full-tutorial-for-beginners`
