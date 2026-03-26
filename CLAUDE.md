@@ -8,6 +8,7 @@ Open any HTML file directly in a browser — no build step, no server required:
 
 ```bash
 open shooter.html
+open shooter2.html
 open tictactoe.html
 ```
 
@@ -35,6 +36,16 @@ Game loop driven by `requestAnimationFrame`. All sprites are drawn programmatica
 **Enemy types:** `basic` (straight charge), `fast` (zigzag, unlocks level 3), `tank` (3 HP hexagon, unlocks level 5). Each enemy is a plain object with `type`, `hp`, `speed`, `radius`, `pts`.
 
 **Score:** Multiplied by current level (`e.pts * level`). High score persisted via `localStorage`.
+
+### `shooter2.html` — Pixel Assault II (sequel)
+
+Same architecture as `shooter.html` with two additions:
+
+**Cyberpunk color palette:** Deep space purple background with scrolling stars, cyan grid, cyan bullets, pink/magenta basic enemies, neon green fast enemies, orange tank enemies. Neon glow via `ctx.shadowBlur`.
+
+**Web Audio API sound:** All sounds are procedurally generated — no audio files. Key functions: `sndShoot()`, `sndHit()`, `sndExplode()`, `sndPlayerHit()`, `sndLevelUp()`, `sndGameOver()`. Uses `playTone()` (oscillator) and `playNoise()` (buffer noise + bandpass filter). `audioCtx.resume()` is called on first click to satisfy browser autoplay policy.
+
+**High score key:** `pxA2Hi` (separate from `shooter.html`'s `pxAHi`).
 
 ### `tictactoe.html` — Tic Tac Toe
 
